@@ -24,6 +24,7 @@ public class RestAssuredBasics {
 	String URI = null;
 	String path = null;
 	
+	//Reusable method
 	public Response getResponse()
 	{
 		Response response = 
@@ -37,6 +38,8 @@ public class RestAssuredBasics {
 		return response;
 	}
 	
+	
+	//Setup before test cases are executed 
 	@Before
 	public void setUp()
 	{
@@ -44,6 +47,7 @@ public class RestAssuredBasics {
 		RestAssured.basePath = "/users/1";
 	}
 	
+	//Get the payload from the response
 	@Test
 	public void RestAssuredGetBody()
 	{
@@ -53,6 +57,7 @@ public class RestAssuredBasics {
 		System.out.println("Response Body: " + body);
 	}
 	
+	//Get the headers from the response
 	@Test
 	public void RestAssuredGetHeaders()
 	{
@@ -66,6 +71,7 @@ public class RestAssuredBasics {
 		System.out.println("Response Headers: " + headers.getValue(headerName));	
 	}
 	
+	//Verify the email address
 	@Test
 	public void RestAssuredHamcrestAssertion()
 	{
@@ -82,6 +88,7 @@ public class RestAssuredBasics {
 		}
 	}
 	
+	//Verify the Status Code
 	@Test
 	public void TestStatusCodeJUnit()
 	{
@@ -98,6 +105,7 @@ public class RestAssuredBasics {
 		}
 	}
 	
+	//Verify the Status Code
 	@Test
 	public void TestStatusCodeHamcrest()
 	{

@@ -16,9 +16,11 @@ import org.junit.Test;
 
 public class Technique01_JsonPath {
 	
-	String URI = null;
-	String path = null;
+	private String URI = null;
+	private String path = null;
 	
+	
+	//Reusable method
 	public Response getResponse(String URI)
 	{
 		Response response = 
@@ -33,7 +35,7 @@ public class Technique01_JsonPath {
 	}
 	
 	
-	
+	//Get the string element from Json
 	@Test
 	public void test01ParsingJsonIndividualElementString()
 	{
@@ -49,6 +51,7 @@ public class Technique01_JsonPath {
 		String website = jsonPath.getString(path);
 	}
 
+	//Get the User Id from Json
 	@Test
 	public void test02ParsingJsonIndividualElementId()
 	{
@@ -72,7 +75,7 @@ public class Technique01_JsonPath {
 		}		
 	}
 	
-	
+	//Verify the Count of Users
 	@Test
 	public void test03ParsingJsonIndividualElementList()
 	{
@@ -101,6 +104,7 @@ public class Technique01_JsonPath {
 		}
 	}
 	
+	//Verify Count of users
 	@Test
 	public void test04ParsingJsonIndividualElementListOfAllObjects()
 	{
@@ -133,6 +137,7 @@ public class Technique01_JsonPath {
 		}
 	}
 	
+	//Verify count of Company
 	@Test
 	public void test05ParsingJsonIndividualElementMapCompanyElements()
 	{
@@ -170,8 +175,6 @@ public class Technique01_JsonPath {
 		path = "company";
 		String key = "catchPhrase";
 		
-		int expectedSize = 3;
-		
 		try {
 		
 			Response response = getResponse(URI);
@@ -193,8 +196,5 @@ public class Technique01_JsonPath {
 			System.out.println("Test Failed");
 			Assert.fail();
 		}
-	}
-	
-	
-	
+	}	
 }
